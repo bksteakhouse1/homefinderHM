@@ -1,0 +1,78 @@
+<div class="center"><p>
+<%if @listings == "noresults"%>
+<h1>No results please try again<h1>
+<%else%>
+<%if @listings == "error" %>
+<h1>Error has occured</h1>
+<%else%>
+<% i = 1%>
+<p style="padding-left:90px"><a href="/search/">Search Again</a></p>
+<br/>
+<%if @listings["hasPrevPages"] == "YES"%>
+	<a href="/find?prevPage=1">Previous Page</a>
+<%else%>
+Previous Page
+<%end%>
+<strong>
+<%=@listings["meta"]["currentPage"]%> of <%=@listings["meta"]["totalPages"]%> page(s)
+</strong>
+<%if @listings["hasMorePages"] == "YES"%>
+	<a href="/find?nextPage=1">Next Page</a>
+<%else%>
+	Next Page
+<%end%>
+</p>
+</div>
+<% @listings["listings"].each do |listing| %>
+				<% if i == 1 %>
+<div id="container5">
+	<div id="container4">
+		<div id="container3">
+			<div id="container2">
+				<div id="container1">
+<%end%>
+				<div id="col<%=i%>">
+						<!-- Column one start -->
+						<h2><%=number_to_currency(listing["price"], :precision => 0)%></h2>
+						<%if listing.has_key?("primaryPhoto")%>
+						<p><div style="background:url('<%=listing["primaryPhoto"]["url"]%>') no-repeat center center; width: 140px; height:90px"></div></p></p>
+						<%end%>
+						<p><%=listing["address"]["line1"]%><br/><%=listing["address"]["city"]%>,&nbsp;<%=listing["address"]["state"]%><br/>
+						<p><a href="http://maps.google.com?q=<%=listing["address"]["latitude"]%>,<%=listing["address"]["longitude"]%>" target="_new"><img src="assets/map_icon_small.jpg"/></a></p>
+						<%if listing["description"] %>
+						<p><%=listing["description"].slice(0,500)%>...</p>
+						<%end%>
+						<p><%= link_to "Detail", :controller => "detail", :action => "show", :id => listing["id"] %></p>
+						<!-- Column one end -->
+					</div>
+<%if i == 5 %>
+<% i = 1%>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<%else%>
+<% i+=1%>
+<%end%>
+<% end %>
+<%end%>
+<div class="center">
+<p style="padding-left:90px"><a href="/search/">Search Again</a></p>
+<br/>
+<%if @listings["hasPrevPages"] == "YES"%>
+	<a href="/find?prevPage=1">Previous Page</a>
+<%else%>
+Previous Page
+<%end%>
+<strong>
+<%=@listings["meta"]["currentPage"]%> of <%=@listings["meta"]["totalPages"]%> page(s)
+</strong>
+<%if @listings["hasMorePages"] == "YES"%>
+	<a href="/find?nextPage=1">Next Page</a>
+<%else%>
+	Next Page
+<%end%>
+</p>
+</div>
+<%end%>	

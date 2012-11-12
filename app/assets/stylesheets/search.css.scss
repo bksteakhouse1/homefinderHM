@@ -1,0 +1,19 @@
+/* Start of Column CSS */
+#fcontainer1 {
+	float:left;
+	width:100%;
+	position:relative;
+	padding-left:50px;
+}
+#fcol1 {
+	float:left;
+	width:50%;
+	position:relative;
+	overflow:hidden;
+	border:2px solid;
+	border-radius:25px;
+	padding:10px;
+	-moz-border-radius:25px; /* Firefox 3.6 and earlier */
+
+}
+

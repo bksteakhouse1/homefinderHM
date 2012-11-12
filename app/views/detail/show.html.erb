@@ -1,0 +1,31 @@
+<div class="center"><p>
+<a href="/search/">Search Again</a>
+<br />
+<a href="/find?back=1">Back</a>
+<br />
+</p></div>
+<%if @listing == "error" %>
+<h1>Error has occured</h1>
+<%else%>
+<div id="dcontainer1">
+	<div id="dcol1">
+						<h2><%=number_to_currency(@listing["price"], :precision => 0)%></h2>
+						<%if @listing.has_key?("primaryPhoto")%>
+						<p><div style="background:url('<%=@listing["primaryPhoto"]["urlLarge"]%>') no-repeat center center; width: 140px; height:90px"></div></p></p>
+						<%end%>
+						<%if @listing["photos"]%>
+						<% @listing["photos"].each do |photo| %>
+							<img src="<%=photo["url"]%>" />
+						<%end%>
+						<%end%>
+						<p><strong>Agent Name:</strong>&nbsp;<%=@listing["agent"]["name"]%></p>
+						<p><strong>Agent Phone:</strong>&nbsp;<%=number_to_phone(@listing["agent"]["phone"])%></p>
+						<p><%=@listing["address"]["line1"]%><br/><%=@listing["address"]["city"]%>,&nbsp;<%=@listing["address"]["state"]%><br/>
+						<p><div style="background:url('assets/map_icon_small.jpg') no-repeat center center; width: 38px; height:43px"></div></p>
+						<div id="desc">
+							<p><%=@listing["description"]%></p>
+						</div>
+
+</div>
+</div>
+<%end%>

@@ -1,0 +1,68 @@
+body {
+	margin:0;
+	padding:0;
+}
+#header h1,
+#header h2,
+#header p {
+	margin-left:2%;
+	padding-right:2%;
+}
+#active2 #tab2,
+#active3 #tab3,
+#active4 #tab4,
+#active5 #tab5 {
+	font-weight:bold;
+	text-decoration:none;
+	color:#000;
+}
+#footer {
+	clear:both;
+	float:left;
+	width:100%;
+}
+#footer p {
+	margin-left:2%;
+	padding-right:2%;
+}
+
+/* Start of Column CSS */
+#dcontainer1 {
+	float:left;
+	width:100%;
+	position:relative;
+	padding-left:50px;
+}
+#dcol1 {
+	float:left;
+	width:80%;
+	position:relative;
+	overflow:hidden;
+	border:2px solid;
+	border-radius:25px;
+	padding-left:10px;
+	-moz-border-radius:25px; /* Firefox 3.6 and earlier */
+
+}
+#desc {
+	float:left;
+	width:50%;
+	position:relative;
+	overflow:hidden;
+	border:2px solid;
+	border-radius:25px;
+	-moz-border-radius:25px; /* Firefox 3.6 and earlier */
+	padding-bottom:10px;
+	padding-top:10px;
+
+}
+.center
+{
+margin:auto;
+width:20%;
+background-color:#fff;
+padding:10px;
+}
+// Place all the styles related to the detail controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/

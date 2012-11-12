@@ -1,0 +1,38 @@
+<div id="fcontainer1">
+	<div id="fcol1">
+<h1>Search and view properties in rails!</h1>
+<%= form_tag("/find", :method => "get" ,:onSubmit => 'return validate()') do %>
+	<%= label_tag(:q, "Location (Address or City, State or Zip Code):") %>
+	<%= text_field_tag(:location) %><br/>
+<br/>
+	<%= radio_button_tag(:baths, "1") %>
+	<%= label_tag(:num_baths, "1 Bathroom") %>
+	<%= radio_button_tag(:baths, "2") %>
+	<%= label_tag(:num_baths, "2 Bathrooms") %>
+	<%= radio_button_tag(:baths, "3") %>
+	<%= label_tag(:num_baths, "3 Bathrooms") %>
+	<%= radio_button_tag(:baths, "4") %>
+	<%= label_tag(:num_baths, "4 Bathrooms") %>
+	<%= radio_button_tag(:baths, "*",true) %>
+	<%= label_tag(:num_baths, "Any Bathrooms") %>
+
+<br/><br/>
+	<%= radio_button_tag(:bedrooms, "1") %>
+	<%= label_tag(:num_bedrooms, "1 Bedroom") %>
+	<%= radio_button_tag(:bedrooms, "2") %>
+	<%= label_tag(:num_bedrooms, "2 Bedroom") %>
+	<%= radio_button_tag(:bedrooms, "3") %>
+	<%= label_tag(:num_bedrooms, "3 Bedroom") %>
+	<%= radio_button_tag(:bedrooms, "4") %>
+	<%= label_tag(:num_bedrooms, "4 Bedroom") %>
+	<%= radio_button_tag(:bedrooms, "5") %>
+	<%= label_tag(:num_bedrooms, "5 Bedroom") %>
+	<%= radio_button_tag(:bedrooms, "*",true) %>
+	<%= label_tag(:num_baths, "Any Bedrooms") %>
+  
+  <br />
+
+  <%= submit_tag("Search") %>
+<% end %>	
+</div>
+</div>

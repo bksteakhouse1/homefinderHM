@@ -15,6 +15,7 @@ HomefinderHM::Application.routes.draw do
 	resources :search
 	resources :find
 	resources :detail
+        root :to => 'search#index'
   # Sample resource route with options:
   #   resources :products do
   #     member do
